@@ -7,8 +7,10 @@
 
   <ItemGroup>
     <Compile Include="FileReading.fs" />
+    <Compile Include="IntListHandling.fs" />
     <Compile Include="FParsecTest.fs" />
     <Compile Include="ParseListPairs.fs" />
+    <Compile Include="LevelsAndReports.fs" />
     <Compile Include="Library.fs" />
   </ItemGroup>
 
