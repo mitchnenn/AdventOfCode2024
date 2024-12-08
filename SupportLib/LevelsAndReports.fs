@@ -23,15 +23,28 @@ module LevelsAndReports =
         | Success(result, _, _) -> Result.Ok(result)
         | Failure(errorMsg, _, _) -> Result.Error(errorMsg)
 
-    let isSafeReport (diffs:int list) : bool =
-        let maxStep = diffs |> List.map abs |> List.max
+    let isSafeLevelsCriteriaMet (diffs:int list) : bool =
+        let maxStep =
+            diffs
+            |> List.map abs
+            |> List.max
         let allPositive = List.forall(fun i -> i > 0) diffs
         let allNegative = List.forall(fun i -> i < 0) diffs
         (maxStep <= 3) && (allPositive || allNegative)
         
+    let areLevelsSafe (levels:int list) : bool =
+        levels
+        |> parseSequentialDifferences
+        |> isSafeLevelsCriteriaMet
+
+    let isReportSafe (report:Report) : bool =
+        report.Levels
+        |> buildExceptedIndexList 
+        |> List.map(areLevelsSafe) 
+        |> List.exists(fun isSafe -> isSafe = true)
+                    
     let findSafeReports (reports : Report list) =
         reports
-        |> List.map (fun r -> (r, parseSequentialDifferences r.Levels))
-        |> List.map (fun (r,diffs) -> r, isSafeReport diffs)
-        |> List.filter (fun (_, s) -> s = true)
+        |> List.map (fun r -> (r, isReportSafe r))
+        |> List.filter(fun (_,isSafe) -> isSafe = true)
         |> List.map fst
