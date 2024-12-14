@@ -7,6 +7,8 @@
 
   <ItemGroup>
     <Compile Include="FileReading.fs" />
+    <Compile Include="ArrayHelper.fs" />
+    <Compile Include="StringHelpers.fs" />
     <Compile Include="IntListHandling.fs" />
     <Compile Include="FParsecSupport.fs" />
     <Compile Include="ParseListPairs.fs" />

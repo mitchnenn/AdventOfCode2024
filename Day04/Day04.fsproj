@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Program.fs" />
+    <Content Include="example_input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="index.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SupportLib\SupportLib.fsproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FParsec" Version="2.0.0-beta2" />
+  </ItemGroup>
+  
+</Project>
