@@ -3,7 +3,8 @@ open SupportLib.FileReading
 open SupportLib.StringHelpers
 open SupportLib.FParsecSupport
 
-let input = readAllLines "example_input.txt"
+//let input = readAllLines "example_input.txt"
+let input = readAllLines "problem_input.txt"
 
 let xmas:string = "XMAS" 
 
