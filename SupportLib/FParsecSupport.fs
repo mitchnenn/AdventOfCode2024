@@ -2,6 +2,7 @@ namespace SupportLib
 
 module FParsecSupport =
     open FParsec
+    open StringHelpers
 
     let str s = pstring s
     let ws = spaces

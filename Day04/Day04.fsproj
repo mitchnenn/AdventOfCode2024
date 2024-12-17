@@ -10,7 +10,7 @@
     <Content Include="example_input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="index.txt" />
+    <Content Include="problem_input.txt" />
   </ItemGroup>
 
   <ItemGroup>
