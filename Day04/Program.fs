@@ -1,10 +1,10 @@
 ﻿open SupportLib.FileReading
 open SupportLib.CharAndIndex
 
-let input = readAllLines "example_input.txt"
-//let input = readAllLines "problem_input.txt"
+//let input = readAllLines "example_input.txt"
+let input = readAllLines "problem_input.txt"
 
-let xmas:string = "MAS" 
+let xmas:string = "MAS"
 
 let charAndIndexArray = stringListTo2DCharIndexArray (xmas.ToCharArray() |> List.ofArray) input
 
